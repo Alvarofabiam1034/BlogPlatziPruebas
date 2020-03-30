@@ -1,0 +1,19 @@
+body{
+    text-align: left;
+    color: rgb(226, 33, 33);
+    font-family: "Calibri";
+}
+#container
+{
+    width: 95%;
+    padding: 1em;
+    text-align: left;
+    border: 5px solid #DDD;
+}
+#container h1{
+    font-size: 20px;
+}
+
+#cabecera{
+    background: rgb(255, 160, 51);
+}

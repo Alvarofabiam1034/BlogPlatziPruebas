@@ -1,0 +1,142 @@
+/*Comandos GIT*/
+git --version = Muestra la version de github
+git config --global user.name usuarioGit= Setea el usuario de git
+git config --gobal user.email email@email.com = seteaEmailGit
+git config user.name = devuelve el nombre de usuario de git
+git config user.email = devuelve el email de git
+git config --list = lista configuraciones
+git config --list --show-origin = ubicación de las configuraciones
+git init = inicia un repositorio en la ubicación actual
+git add<file> = mueve los archivos de la carpeta de trabajo a la carpeta que se subira al repositorio padre
+git add . = agrega a la zona de trabajo todos los archivos pendientes
+git status muestra el estado actual de un archivo en cuanto a su ubicación y estado de sincronizacion git
+git commit = mueve los archivos del area de preparación al repositorio
+git commit -m "El mensaje del commit" = asi tambien se hace commit sin ir a la segunda consola
+git push = sube mis cambios a web
+git pull = trae los cambios hechos por otros desarrolladores
+git clone = crea una copia desde un servidor hasta mi pc
+git log = muestra el historial de commits
+git log nombreArchivo, muestra el historial de cambios de un archivo
+
+git checkout -- archivo = retrocede el archivo a su ultima version en commit
+git checkout =  muestra la lista de los archivos que han sido modificados desde el ultimo comit
+
+git checkout + @id_del commit + nombreArchivo = retrocede los archivos a una versión anterios de un commit, sirve para ver como era un archivo en una versión pasada sin afectar la rama
+master, en ese estado se puede crear una rama sobre la versión del commit realizado, esto facilita trabajar sobre la nueva rama apartir de la versión de un commit anterior
+sin afectar los cambios guardados sobre el master para retroceder se debe hacer el checout sobre el master, si se quieren pasar los cambios de un commit pasado al master 
+se hace un git add . + un git commit, ES MUY IMPORTANTE SABER QUE SE ELIMINARA EL ARCHIVO ACTUAL Y SE REEMPLAZARA POR EL ARCHIVO DE LA VERSIÓN DEL COMMIT SELECCIONADO
+
+$ git checkout master nombreArchivo = tambien podemos recuperar archivos desde el master a una rama
+
+
+
+git diff archivo = me muestra una comparacion del codigo actual con el del ultimo commit
+
+[Si hay un archivo en stagging que ha sido modificado git diff muestra la comparación del archivo sin trackear con el archivo que esta en el stagging]
+
+[Para realizar la comparación de cambios entre dos archivos generados se leen los tags de cada cambio
+con git log luego se aplica el comando git diff @id_cambio_antiguo @id_cambio_reciente, si se desea comparar con el ultimo archivo en repositorio
+solamente se escribe el @id_cambio1]
+
+IMPORTANTE(Con git diff tambien podemos hacer revisión de cambios entre dos ramas)
+
+
+git branch = muestra la rama donde se esta trabajando
+git branch nombreNuevoBranch = crea una nueva rama para evitar alterar la rama master
+git branch ramaExistente = nos mueve a una rama ya existente
+git show  muestra los cambios hechos sobre un archivo, junto con información referente al cambio comparado al ultimo commit
+
+git reset @id_cambio --hard = retorna todos los archivos del proyecto al estado en el que estaban en el commit relacionado al @id_cambio=>(git log), ignorando y desechando los cambios que estan en stagging
+y eliminando los archivos nuevos que se hayan agregado en commits posteriores al commit que se quiere volver
+
+
+git reset @id_cambio --soft = retorna todos los archivos del proyecto que esten en la zona repositorio y que no tengan cambios pendientes 
+al estado en el que estaban en el commit relacionado al @id_cambio, manteniendo los cambios que estan en stagging y manteniendo como nuevos
+todos aquellos archivos que se hayan agregado en commits posteriores al que se quiere regresar
+
+IMPORTANTE(Si estamos trabajando sobre una rama y retornamos por ejemplo del commit 10 al commit 5, eso no hara que los commit de la rama master se vean afectados,
+una rama es una instancia de la rama maestra todos los cambios quedaran sobre el repositorio de la rama donde se este trabajando)
+
+[Para realizar la comparación de cambios entre dos archivos generados se leen los tags de cada cambio
+con git log luego se aplica el comando git diff @id_cambio1 @id_cambio2, si se desea comparar con el ultimo archivo en repositorio
+solamente se escribe el @id_cambio1]
+
+git log --stat @opt_file = muestra información sobre adición o eliminación de archivos sobre cada commit 
+
+git rm --cached file = elimina un archivo de la zona de stagging aunque no elimina el archivo del directorio de trabajo
+git show file= muestra los cambios que se han hecho sobre un arhivo resaltandolos, solo compara las ultimas dos versiones que se encuentren en repositorio no cubre los archivos en stagging 
+
+
+git remote add origin urlRepositorioGitHub = conecta con el repositorio web, aqui de deben ingresar las credenciales de inicio de sesion de github
+git remote -v =  muestra la direccion del repositorio remoto indicando las acciones que podemos hacer, push(enviar), fetch (traer)
+git push -u origin master = con este comando se comienzan a subir los archivos al repositorio web despues de estar logueados
+
+
+$ git switch -c rama_de_copia_master =  crea una copia de la rama actual
+
+cat nombreArchivo = muestra el contenido del mismo
+history = muestra el historial de todos los comandos que se han ejecutado en la consola con un identificador, si se ingresa !+identificador se ejecuta el comando de esa posicion
+
+-------------------------------------------GIT DESDE MERGE------------------------------------
+git merge rama2 = el comando git merge realiza la fusion de dos ramas sobre la rama actual, esta fusión genera un nuevo commit el cual queda sobre
+la rama actual mostrando la versión final de la rama que incluye los cambios de ambas ramas fusionadas, esto siempre y cuando no existan conflictos ocacionados
+por la modificación de las mismas lineas de codigo en las dos ramas a fusionar
+
+Solución de conflictos:
+
+Si al momento de fusionar dos archivos se presenta un clonflicto entre dos archivos git merge realizara la fusión de las secciones de texto que considera estan correctas
+y nos señalara los puntos en los cuales se ha presentado un conflicto, si el proyecto esta abierto desde visual studio code nos permitira decidir cual cambio
+aceptar y cual rechazar, a diferencia de un merge exitoso un merge con conflicto no genera automaticamente el commit, este se debe realizar manualmente
+despues de arreglar las secciones de texto con marcación de conflicto.
+
+
+$ git pull origin master =  trae los cambios desde el repositorio remoto, siempre y cuando ya estan sincronizados remoto y local
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+code = inicia vs-code si esta instalado
+code + nombreArchivo = abre el archivo en vs code
+cd.. = retocede del directorio actual
+cd .. = retocede del directorio actual
+cd directorio = accede a un directorio
+mkdir nombreCarpeta = crea una carpeta con en el directorio actual
+touch index.html = crear un archivo en el directorio actual
+ls +-al+l = lista los subdirectorios del directorio actual ocultos
+ren index.hml index.html = renombra un achivo o directorio
+rm index.html = elimina un archivo
+rmdir pruebas = elimina un directorio
+pwd = muestra la ubicación actual
+clear o ctrl + l = limpiar consola
+cd ~ = Nos lleva automaticamente al Home independientemente de donde estemos.
+cd - = Nos lleva al ultimo directorio visitado.
+cp = para copiar un archivo
+mv = mover un archivo
+rmdir = borrar un directorio
+rm -r = elimina un directorio no vacío.
+ls = lista todos los archivos que se encuentran en la carpeta sobre la que estamos trabajando.
+ls -a = lista todos los archivos incluyendo aquellos que se han definido como ocultos.
+ls -t = ordena los archivos por fecha de modificación.
+ls -x = ordena los archivos por extension
+ls -s = muestra toda la información: Usuario, grupo, permiso, fecha y hora de creación.
+ls -lh = muestras los mismo que ls -s pero con la unidad de Tama;o.
+ls -r = muestra el contenido de todos los subdirectorios de forma recursiva.
+ls -s = ordena los resultados por Tama;o de archivo.
+
+wq = escribir y salir desde la ventana del commit
+
+
