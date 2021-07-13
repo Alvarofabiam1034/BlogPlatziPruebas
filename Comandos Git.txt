@@ -69,6 +69,7 @@ git show file= muestra los cambios que se han hecho sobre un arhivo resaltandolo
 
 git remote add origin urlRepositorioGitHub = conecta con el repositorio web, aqui de deben ingresar las credenciales de inicio de sesion de github
 git remote -v =  muestra la direccion del repositorio remoto indicando las acciones que podemos hacer, push(enviar), fetch (traer)
+git remote set-url origin url = cambia el orghen remoto del repositorio
 git push -u origin master = con este comando se comienzan a subir los archivos al repositorio web despues de estar logueados
 
 
