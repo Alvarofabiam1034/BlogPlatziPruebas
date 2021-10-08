@@ -28,6 +28,10 @@ se hace un git add . + un git commit, ES MUY IMPORTANTE SABER QUE SE ELIMINARA E
 
 $ git checkout master nombreArchivo = tambien podemos recuperar archivos desde el master a una rama
 
+env = lista las variables de entorno
+
+cat file | grep str = busca una coindiciencia en un archivo
+
 
 
 git diff archivo = me muestra una comparacion del codigo actual con el del ultimo commit
@@ -93,23 +97,6 @@ despues de arreglar las secciones de texto con marcación de conflicto.
 
 $ git pull origin master =  trae los cambios desde el repositorio remoto, siempre y cuando ya estan sincronizados remoto y local
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 code = inicia vs-code si esta instalado
 code + nombreArchivo = abre el archivo en vs code
 cd.. = retocede del directorio actual
@@ -125,12 +112,14 @@ pwd = muestra la ubicación actual
 clear o ctrl + l = limpiar consola
 cd ~ = Nos lleva automaticamente al Home independientemente de donde estemos.
 cd - = Nos lleva al ultimo directorio visitado.
+cd / = nos mueve al directorio raiz
 cp = para copiar un archivo
-mv = mover un archivo
+mv file 1 file2= mover un archivo o renombrarlo
 rmdir = borrar un directorio
 rm -r = elimina un directorio no vacío.
 ls = lista todos los archivos que se encuentran en la carpeta sobre la que estamos trabajando.
 ls -a = lista todos los archivos incluyendo aquellos que se han definido como ocultos.
+ls -la = muestra todos los archivos incluyendo informacion de sus permisos
 ls -t = ordena los archivos por fecha de modificación.
 ls -x = ordena los archivos por extension
 ls -s = muestra toda la información: Usuario, grupo, permiso, fecha y hora de creación.
@@ -138,6 +127,39 @@ ls -lh = muestras los mismo que ls -s pero con la unidad de Tama;o.
 ls -r = muestra el contenido de todos los subdirectorios de forma recursiva.
 ls -s = ordena los resultados por Tama;o de archivo.
 
+
 wq = escribir y salir desde la ventana del commit
+which programa = valida si tenemos un programa instalado
+date = muestra la fecha
+type echo = muesta a quien pertenece un comando
+man echo = mustra el manual de un comando
+
+-------PERMISOS-------
+d------------= es un archivo
+r = read
+w = writte
+x = execution
+
+d--- = permisos del propietario
+d   --- = permisos del grupo
+d     ---= permisos del resto del mundo
+
+
+sha256sum file = muestra el sha256 de un archivo
+
+---------GO---------------
+go version = muestra la version instalada de go
+go run file.go = corre el archivo
+go help $cmd = ayuda de comandos
+go get urlpkg = descarga un paquete
+go fmt file.go = indenta el archivo
+go build = compila un archivo a binario para abrirlo ejecutamos ./file.bin
+
+
+
+
+
+
+
 
 
